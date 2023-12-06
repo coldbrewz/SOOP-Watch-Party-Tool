@@ -24,7 +24,7 @@ window.addEventListener("load", (event) => {
     document.getElementById("Afreeca").height = h
 
     const url = getCurrentURL()
-    document.getElementById("Twitch").src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=https://escaleirex.github.io"
+    document.getElementById("Twitch").src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=https://github.io"
 
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
         document.getElementById("Twitch").style.height = "25%";
