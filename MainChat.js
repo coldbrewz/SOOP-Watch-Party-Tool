@@ -28,7 +28,7 @@ window.addEventListener("load", (event) => {
 
     const url = getCurrentURL()
 
-    document.getAnimations(link, function(response){
+    document.get(link, function(response){
         var html = response
         var html_src = 'data:text/html;charset=utf-8,' + html
         document("#Twitch").attr("src", html_src)
