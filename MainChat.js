@@ -27,8 +27,8 @@ window.addEventListener("load", (event) => {
     document.getElementById("Afreeca").height = h
 
     const url = getCurrentURL()
-    document.getElementById("Twitch").src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=127.0.0.1"
-    document.getElementById("ChatEmbed").src = "https://www.twitch.tv/embed/" + url.substring(8) + "/chat?darkpopout&parent=127.0.0.1"
+    document.getElementById("Twitch").src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=https://escaleirex.github.io"
+    document.getElementById("ChatEmbed").src = "https://www.twitch.tv/embed/" + url.substring(8) + "/chat?darkpopout&parent=https://escaleirex.github.io"
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
         document.getElementById("Twitch").style.height = "20%";
         document.getElementById("Twitch").style.left = "55%";
