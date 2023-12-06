@@ -24,7 +24,17 @@ window.addEventListener("load", (event) => {
     document.getElementById("Afreeca").height = h
 
     const url = getCurrentURL()
-    document.getElementById("Twitch").src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=https://github.io"
+    console.log(url)
+
+    const iframe1 = document.createElement("iframe");
+    iframe1.frameBorder = "0"
+    iframe1.allowFullscreen = "false"
+    iframe1.scrolling = "no"
+    iframe1.height = "1080"
+    iframe1.width = "1920"
+    iframe1.id = "Twitch"
+    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io"
+    document.body.appendChild(iframe1);
 
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
         document.getElementById("Twitch").style.height = "25%";
