@@ -6,7 +6,4 @@ I made this simple (and bad) website to help me watch AfreecaTV Valorant League 
 
 ![Preview](https://imgur.com/t5LSJSy.png)
 
-### Link
-```
-[Link](https://escaleirex.github.io/AVL-Watch-Party-Tool/Chat)
-```
+### [Link](https://escaleirex.github.io/AVL-Watch-Party-Tool/Chat)
