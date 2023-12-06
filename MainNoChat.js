@@ -1,6 +1,8 @@
+var isOpen = true;
+
 window.addEventListener('resize', function(event) {
-    var w = window.innerWidth
-    var h = window.innerHeight
+    w = window.innerWidth
+    h = window.innerHeight
     document.getElementById("Afreeca").width = w
     document.getElementById("Afreeca").height = h
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
@@ -14,26 +16,31 @@ window.addEventListener('resize', function(event) {
 }, true);
 
 function getCurrentURL () {
-    return window.location.search
+    if(window.location.search == ""){
+        return "?twitch=sliggytv"
+    }
+    else{
+        return window.location.search
+    }
 };
 
 window.addEventListener("load", (event) => {
-    var w = window.innerWidth
-    var h = window.innerHeight
+    w = window.innerWidth
+    h = window.innerHeight
     document.getElementById("Afreeca").width = w
     document.getElementById("Afreeca").height = h
 
-    const url = getCurrentURL()
+    url = getCurrentURL()
     console.log(url)
 
-    const iframe1 = document.createElement("iframe");
+    iframe1 = document.createElement("iframe");
     iframe1.frameBorder = "0"
     iframe1.allowFullscreen = "false"
     iframe1.scrolling = "no"
     iframe1.height = "1080"
     iframe1.width = "1920"
     iframe1.id = "Twitch"
-    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io"
+    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=127.0.0.1"
     document.body.appendChild(iframe1);
 
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
@@ -46,3 +53,34 @@ window.addEventListener("load", (event) => {
     }
 });
 
+function ChangePage(){
+    if(document.getElementById("twitchchannel").value == ""){
+        channel = url
+    } else{
+        channel = document.getElementById("twitchchannel").value
+    }
+
+    if (document.getElementById('ChatCheck').checked) {
+        window.location.assign("http://127.0.0.1:3000/Chat.html?twitch=" + channel);
+    } else {
+        iframe1.src = "https://player.twitch.tv/?channel=" + channel + "&parent=127.0.0.1"
+    }
+}
+
+function Menu(){
+    if (isOpen == true) {
+        isOpen = false
+        document.getElementById('twitchlabel').style.display = "none"
+        document.getElementById('twitchchannel').style.display = "none"
+        document.getElementById('chatlabel').style.display = "none"
+        document.getElementById('ChatCheck').style.display = "none"
+        document.getElementById('Confirm').style.display = "none"
+    } else if(isOpen == false){
+        isOpen = true
+        document.getElementById('twitchlabel').style.display = "inline-block"
+        document.getElementById('twitchchannel').style.display = "inline-block"
+        document.getElementById('chatlabel').style.display = "inline-block"
+        document.getElementById('ChatCheck').style.display = "inline-block"
+        document.getElementById('Confirm').style.display = "inline-block"
+    }
+}
