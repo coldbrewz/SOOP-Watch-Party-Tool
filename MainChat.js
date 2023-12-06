@@ -29,6 +29,8 @@ window.addEventListener("load", (event) => {
     const url = getCurrentURL()
     console.log(url)
 
+    //should work
+
     const iframe1 = document.createElement("iframe");
     iframe1.frameBorder = "0"
     iframe1.allowFullscreen = "false"
