@@ -27,6 +27,7 @@ window.addEventListener("load", (event) => {
     document.getElementById("Afreeca").height = h
 
     const url = getCurrentURL()
+    console.log(url)
 
     const iframe1 = document.createElement("iframe");
     iframe1.frameBorder = "0"
