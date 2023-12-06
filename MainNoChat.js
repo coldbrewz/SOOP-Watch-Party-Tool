@@ -40,7 +40,7 @@ window.addEventListener("load", (event) => {
     iframe1.height = "1080"
     iframe1.width = "1920"
     iframe1.id = "Twitch"
-    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=127.0.0.1"
+    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io"
     document.body.appendChild(iframe1);
 
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
@@ -61,9 +61,18 @@ function ChangePage(){
     }
 
     if (document.getElementById('ChatCheck').checked) {
-        window.location.assign("http://127.0.0.1:3000/Chat.html?twitch=" + channel);
+        window.location.assign("https://escaleirex.github.io/AVL-Watch-Party-Tool/Chat.html?twitch=" + channel);
     } else {
-        iframe1.src = "https://player.twitch.tv/?channel=" + channel + "&parent=127.0.0.1"
+        document.getElementById('Twitch').remove()
+        iframe1 = document.createElement("iframe");
+        iframe1.frameBorder = "0"
+        iframe1.allowFullscreen = "false"
+        iframe1.scrolling = "no"
+        iframe1.height = "1080"
+        iframe1.width = "1920"
+        iframe1.id = "Twitch"
+        iframe1.src = "https://player.twitch.tv/?channel=" + channel + "&parent=escaleirex.github.io"
+        document.body.appendChild(iframe1);
     }
 }
 
