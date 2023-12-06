@@ -28,13 +28,12 @@ window.addEventListener("load", (event) => {
 
     const url = getCurrentURL()
 
-    document.get(link, function(response){
+    document.get("https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io", function(response){
         var html = response
         var html_src = 'data:text/html;charset=utf-8,' + html
         document("#Twitch").attr("src", html_src)
     })
 
-    document.getElementById("Twitch").src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io"
     document.getElementById("ChatEmbed").src = "https://www.twitch.tv/embed/" + url.substring(8) + "/chat?darkpopout&parent=escaleirex.github.io"
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
         document.getElementById("Twitch").style.height = "20%";
