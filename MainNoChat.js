@@ -93,3 +93,5 @@ function Menu(){
         document.getElementById('Confirm').style.display = "inline-block"
     }
 }
+
+//wtf
