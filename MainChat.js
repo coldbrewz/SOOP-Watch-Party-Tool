@@ -28,13 +28,23 @@ window.addEventListener("load", (event) => {
 
     const url = getCurrentURL()
 
-    document.get("https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io", function(response){
-        var html = response
-        var html_src = 'data:text/html;charset=utf-8,' + html
-        document("#Twitch").attr("src", html_src)
-    })
+    const iframe1 = document.createElement("iframe");
+    iframe1.frameBorder = "0"
+    iframe1.allowFullscreen = "false"
+    iframe1.scrolling = "no"
+    iframe1.height = "1080"
+    iframe1.width = "1920"
+    iframe1.id = "Twitch"
+    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io"
+    document.body.appendChild(iframe1);
 
-    document.getElementById("ChatEmbed").src = "https://www.twitch.tv/embed/" + url.substring(8) + "/chat?darkpopout&parent=escaleirex.github.io"
+    const iframe2 = document.createElement("iframe");
+    iframe2.height = "1080"
+    iframe2.width = "1920"
+    iframe2.id = "ChatEmbed"
+    iframe2.src = "https://www.twitch.tv/embed/" + url.substring(8) + "/chat?darkpopout&parent=escaleirex.github.io"
+    document.body.appendChild(iframe2);
+
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
         document.getElementById("Twitch").style.height = "20%";
         document.getElementById("Twitch").style.left = "55%";
