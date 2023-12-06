@@ -55,7 +55,7 @@ window.addEventListener("load", (event) => {
 
 function ChangePage(){
     if(document.getElementById("twitchchannel").value == ""){
-        channel = url
+        channel = url.substring(8)
     } else{
         channel = document.getElementById("twitchchannel").value
     }
