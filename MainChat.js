@@ -43,14 +43,14 @@ window.addEventListener("load", (event) => {
     iframe1.height = "1080"
     iframe1.width = "1920"
     iframe1.id = "Twitch"
-    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=escaleirex.github.io"
+    iframe1.src = "https://player.twitch.tv/?channel=" + url.substring(8) + "&parent=coldbrewz.github.io"
     document.body.appendChild(iframe1);
 
     iframe2 = document.createElement("iframe");
     iframe2.height = "1080"
     iframe2.width = "1920"
     iframe2.id = "ChatEmbed"
-    iframe2.src = "https://www.twitch.tv/embed/" + url.substring(8) + "/chat?darkpopout&parent=escaleirex.github.io"
+    iframe2.src = "https://www.twitch.tv/embed/" + url.substring(8) + "/chat?darkpopout&parent=coldbrewz.github.io"
     document.body.appendChild(iframe2);
 
     if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
@@ -74,9 +74,9 @@ function ChangePage(){
     }
 
     if (document.getElementById('ChatCheck').checked) {
-        window.location.assign("https://escaleirex.github.io/AVL-Watch-Party-Tool/Chat.html?twitch=" + channel);
+        window.location.assign("https://coldbrewz.github.io/SOOP-Watch-Party-Tool/Chat.html?twitch=" + channel);
     } else {
-        window.location.assign("https://escaleirex.github.io/AVL-Watch-Party-Tool/NoChat.html?twitch=" + channel);
+        window.location.assign("https://coldbrewz.github.io/SOOP-Watch-Party-Tool/NoChat.html?twitch=" + channel);
     }
 }
 
